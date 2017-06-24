@@ -1,4 +1,5 @@
 # gamer-resume
+(PROJECT STILL UNDER DEVELOPMENT)
 A resume for gamers to social with each other. This is based loosely off of
 [tiny-personal-resume](https://github.com/jessebot/tiny_personal_website), but
 that is more geared towards coding professionals. This is entirely for fun! :D
