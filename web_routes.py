@@ -20,18 +20,6 @@ def get_global_variable(global_variable):
     return txt
 
 def get_global_variables():
-    favicon = get_global_variable('favicon')
-    browser_tab_title = get_global_variable('website_title')
-    main_pic = get_global_variable('profile_image')
-    name = get_global_variable('profile_name')
-    header_quotation = get_global_variable('profile_quote')
-    blurb = get_global_variable('profile_blurb')
-    steam_URL = get_global_variable('steam_URL')
-    optional_panel = get_global_variable('optional_panel')
-    optional_panel_title = get_global_variable('opt_panel_title')
-    optional_panel_pic = get_global_variable('opt_panel_image')
-    optional_panel_button_text = get_global_variable('opt_panel_button_text')
-    optional_panel_button_URL = get_global_variable('opt_panel_URL')
     with open('./config/config.yaml', 'r') as f:
         doc = yaml.load(f)
     txt = doc["Globals"]
@@ -52,21 +40,12 @@ def index():
     global_var_dict = get_global_variables()
     for key,value in global_var_dict.iteritems():
         key = value
-    return template('index', favicon=favicon,
-                    browser_tab_title=browser_tab_title, main_pic=main_pic,
-                    name=name, header_quotation=header_quotation,
-                    steam_URL=steam_URL, discord_username=discord_username
-                    fork_me=fork_me, optional_panel=optional_panel,
-                    optional_panel_title=optional_panel_title,
-                    optional_panel_pic=optional_panel_pic, blurb=blurb,
-                    optional_panel_button_text=optional_panel_button_text,
-                    optional_panel_button_URL=optional_panel_button_URL)
+    return template('index', global_var_dict=global_var_dict)
 
-
-@route('/images/<filename>')
-def images(filename):
-    return static_file(filename, root='{0}/front_end/images'.format(WEB_ROOT))
-
+@route('/icons/<filename>')
+def icons(filename):
+    return static_file(filename,
+                       root='{0}/front_end/icons'.format(WEB_ROOT))
 
 @route('/js/<filename>')
 def js(filename):
