@@ -3,17 +3,19 @@ var express = require("express");
 var app = express();
 var router = express.Router();
 var path = __dirname + '/views/';
+var fs = require('fs');
+var ejs = require('ejs');
 
 // steam lolz
 var Steam = require('steam-webapi');
-var vanToId = "";
 
-// json what how do...
-var json = require('./config/config.json'); //(with path)
 
-function getSteamId(api_key, vanity_id) {
+function getSteamId() {
   // Retrieve the steam ID from a steam username/communityID
-  custom_vanity = vanity_id;
+  var json = JSON.parse(fs.readFile('./config/config.json'));
+
+  custom_vanity = json.social_handles.steam_vanity_ID;
+  api_key = json.steam_api_key;
   // Set global Steam API Key
   Steam.key = api_key;
   // grab custom steam data
@@ -22,7 +24,10 @@ function getSteamId(api_key, vanity_id) {
     var steam = new Steam();
     steam.resolveVanityURL({vanityurl:custom_vanity}, function(err, data) {
       // data -> { steamid: '76561197968620915', success: 1 }
-      vanToId = data.steamid
+      json.social_handles.steam_id = data.steamid;
+      console.log(json.social_handles.steam_id);
+      var converted_json = JSON.stringify(json, null, 2); // spacing level = 2?
+      fs.writeFile('./config/config.json', converted_json, 'utf8'); // write it back
     });
   });
 };
@@ -34,17 +39,14 @@ router.use(function (req,res,next) {
 });
 
 router.get("/",function(req,res){
-  var ejs = require('ejs');
-  const fs = require('fs');
+  getSteamId();
+  var json = JSON.parse(fs.readFile('./config/config.json', 'utf8'));
 
-  // Steam test~!
-  vanity_id = json.social_handles.steam_vanity_ID;
-  steam_api_key = json.steam_api_key;
-  getSteamId(steam_api_key, vanity_id);
-  console.log(vanToId);
-  console.log("this is after the new functions")
+  // reload json and make sure we got that handle....
+  console.log("this is after the new functions");
+  console.log(json.social_handles.steam_id);
   // stupid name?
-  // var display_name = steam.getPlayerSummaries({key:json.steam_api_key}, steam_id);
+  // var display_name = steam.getPlayerSummaries({key:json.steam_api_key, steam_id});
   // console.log(display_name);
 
   // set templating engine
