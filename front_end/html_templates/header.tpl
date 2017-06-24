@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/x-icon" href="/images/{{global_var_dict['favicon']}}">
+    <link rel="icon" type="image/x-icon" href="/icons/{{global_var_dict['favicon']}}">
 
     <title>{{global_var_dict['website_title']}}</title>
 
