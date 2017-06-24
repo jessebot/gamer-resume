@@ -1,0 +1,32 @@
+{
+    "web_globals": {
+        "favicon": "smiley.ico",
+        "website_title": "GAMER RESUME",
+        "fork_me": "false",
+        "optional_panel": "False"
+    },
+
+    "profile_data": {
+        "profile_image": "trinkets.png",
+        "profile_name": "ANONYMOUS GAMER",
+        "profile_quote": "Let's get Social :D",
+        "profile_blurb": "A personal site for connecting with people."
+    },
+
+    "social_handles": {
+        "steam_vanity_ID": "D3Rpies",
+        "discord_username": "Derpies#9042",
+        "battlenet_tag": "Derpies#1001",
+        "twitch_channel": "derpies",
+        "bethesda_id": "derpies"
+    },
+    
+    "steam_api_key": "A8792547389054jdslakfjdksla;hf2E2667567658428",
+    
+    "optional_panel": {
+        "opt_panel_title": "I'm a little teapot",
+        "opt_panel_image": "teapot.png",
+        "opt_panel_button_text": "How To Pour tea",
+        "opt_panel_URL": "http://lmgtfy.com/howtea"
+    }
+}
