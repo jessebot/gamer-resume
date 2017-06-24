@@ -1,0 +1,59 @@
+@media (min-width: 768px) {
+    .padMe {
+      padding: 0px 120px 0px 120px;
+    }
+    .buttonLower {
+      padding-top: 50px;
+    }
+    .featureTextPad {
+      padding-top: 35px;
+    }
+    .featureImagePad {
+      padding-left: 30px;
+      padding-top: 10px;
+    }
+    .imageLower {
+      padding-top: 40px;
+    }
+    .starter-template {
+      padding: 40px 45px 0px 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .padMe {
+      padding: 0px 80px 0px 80px;
+    }
+    .featureImagePad {
+      padding-left: 30px;
+      padding-left: 30px;
+      padding-top: 10px;
+    }
+    .featureTextPad {
+      padding-top: 40px;
+    }
+    .buttonLower {
+      padding-top: 60px;
+    }
+
+    .imageLower {
+      padding-top: 11px;
+    }
+    .starter-template {
+      padding: 40px 25px 0px 0px;
+    }
+}
+
+.starter-template {
+  text-align: center;
+}
+
+.center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.special-font {
+    font-family: monospace;
+}
