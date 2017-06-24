@@ -25,11 +25,11 @@ Working demo available at https://domo.games.
 
 `npm install`
 
-## Create a yml file
-### Copy the existing sample to a new file named config.yml, then user a
+## Create a json file
+### Copy the existing sample to a new file named config.json, then user a
 ### text editor to change the values to your usernames
 
-`cp config/sample-config.yml config/config.yml`
+`cp config/sample-config.json config/config.json`
 
 ## To start
 
