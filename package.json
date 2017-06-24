@@ -1,11 +1,19 @@
 {
-  "name": "domo-games",
-  "version": "0.0.1",
+  "name": "gamer-resume",
+  "version": "0.0.2",
+  "description": "Node.js app for gamers using express.",
+  "main": "gamerresume.js",
   "scripts": {
-    "start": "nodejs domogames.js"
+    "start": "nodejs gamerresume.js"
   },
   "dependencies": {
     "express": "latest",
     "js-yaml": "^3.8.4"
-  }
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/jessebot/gamer-resume"
+  },
+  "author": "Jesse Hitch (jessebot@linux.com)",
+  "license": "GNU General Public License v3.0"
 }
