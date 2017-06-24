@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/x-icon" href="icons/<%= global_vars.favicon %>">
+    <link rel="icon" type="image/x-icon" href="icons/<%= json.web_globals.favicon %>">
 
-    <title><%= global_vars.website_title %></title>
+    <title><%= json.web_globals.web_title %></title>
 
     <!-- Custom styles for this template -->
     <link href="/css/starter-template.css" rel="stylesheet">
@@ -37,19 +37,19 @@
           <div class="panel-body">
         <div class="row featurette featureImagePad">
                 <div class="col-sm-6 col-md-5">
-                  <img class="featurette-image img-responsive img-circle"  src="icons/<%= global_vars.profile_image %>">
+                  <img class="featurette-image img-responsive img-circle"  src="icons/<%= json.profile_data.profile_image %>">
                 </div>
                 <div class="col-sm-6 col-md-7 featureTextPad">
-                <% if (global_vars.profile_name.length > 13) { %>
-                      <h3 class="featurette-heading"><%= global_vars.profile_name %></h3>
+                <% if (json.profile_data.profile_name.length > 13) { %>
+                      <h3 class="featurette-heading"><%= json.profile_data.profile_name %></h3>
                 <% } else { %>
-                      <h2 class="featurette-heading"><%= global_vars.profile_name %>.</h2>
+                      <h2 class="featurette-heading"><%= json.profile_data.profile_name %>.</h2>
                 <% } %>
-                  <p class="lead special-font"><small><%= global_vars.profile_quote %></small></p>
-                <% if (global_vars.profile_name.length > 13) { %>
-                  <h5><small><%= global_vars.profile_blurb %></small></h5>
+                  <p class="lead special-font"><small><%= json.profile_data.profile_quote %></small></p>
+                <% if (json.profile_data.profile_name.length > 13) { %>
+                  <h5><small><%= json.profile_data.profile_blurb %></small></h5>
                 <% } else { %>
-                  <h4><small><%= global_vars.profile_blurb %></small></h4>
+                  <h4><small><%= json.profile_data.profile_blurb %></small></h4>
                 <% } %>
                 </div>
               </div>
@@ -74,7 +74,7 @@
                     <img src="icons/steam.png">
                   </div>
                   <div class="col-xs-12 col-sm-5 col-md-6 buttonLower">
-                    <a target="_blank" href="<%= global_vars.steam_URL %>" class="btn btn-primary btn-lg" role="button" data-toggle="tooltip" data-placement="bottom" title="Current handle on steam.">Steam</a>
+                    <a target="_blank" href="<%= json.social_handles.steam_URL %>" class="btn btn-primary btn-lg" role="button" data-toggle="tooltip" data-placement="bottom" title="Current handle on steam.">Steam</a>
                   </div>
                 </div>
               </div>
@@ -84,7 +84,7 @@
                     <img src="icons/discord.png">
                   </div>
                   <div class="col-xs-12 col-sm-6 col-sm-5 col-md-6 buttonLower">
-                    <a target="_blank" href="<%= global_vars.discord_username %>" class="btn btn-primary btn-lg" role="button" data-toggle="tooltip" data-placement="bottom" title="Discord username <3.">Discord</a>
+                    <a target="_blank" href="<%= json.social_handles.discord_username %>" class="btn btn-primary btn-lg" role="button" data-toggle="tooltip" data-placement="bottom" title="Discord username <3.">Discord</a>
                   </div>
                 </div>
               </div>
@@ -92,12 +92,12 @@
           </div>
         </div>
       </div>
-     <% if (global_vars.optional_panel) { %>
+     <% if (json.web_globals.optional_panel) { %>
            <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                    <%= global_vars.optional_panel_title %>
+                    <%= json.optional_panel.title %>
                   </a>
                 </h4>
               </div>
@@ -105,8 +105,8 @@
                 <div class="panel-body">
                   <h2>
                     <p>
-                      <img src="/icons/<%= global_vars.optional_panel_pic %>">
-                      <a target="_blank" href="<%= global_vars.optional_panel_button_URL %>" class="btn btn-primary btn-lg" role="button"><%= global_vars.optional_panel_button_text %></a>
+                      <img src="/icons/<%= json.optional_panel.pic %>">
+                      <a target="_blank" href="<%= json.optional_panel.button_URL %>" class="btn btn-primary btn-lg" role="button"><%= json.optional_panel.button_text %></a>
                     </p>
                   </h2>
                 </div>

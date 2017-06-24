@@ -8,6 +8,9 @@ var path = __dirname + '/views/';
 var Steam = require('steam-webapi');
 var vanToId = "";
 
+// json what how do...
+var json = require('./config/config.json'); //(with path)
+
 function getSteamId(api_key, vanity_id) {
   // Retrieve the steam ID from a steam username/communityID
   custom_vanity = vanity_id;
@@ -32,25 +35,16 @@ router.use(function (req,res,next) {
 
 router.get("/",function(req,res){
   var ejs = require('ejs');
-  const yaml = require('js-yaml');
   const fs = require('fs');
 
-  // load in all the user defined variables in config.yml
-  try {
-      const config = yaml.safeLoad(fs.readFileSync('config/config.yml', 'utf8'));
-      const global_vars = config.globals;
-  } catch (e) {
-      console.log(e);
-  }
-
   // Steam test~!
-  vanity_id = global_vars.steam_vanity_ID;
-  steam_api_key = global_vars.steam_api_key;
+  vanity_id = json.social_handles.steam_vanity_ID;
+  steam_api_key = json.steam_api_key;
   getSteamId(steam_api_key, vanity_id);
   console.log(vanToId);
   console.log("this is after the new functions")
   // stupid name?
-  // var display_name = steam.getPlayerSummaries({key:global_vars.steam_api_key}, steam_id);
+  // var display_name = steam.getPlayerSummaries({key:json.steam_api_key}, steam_id);
   // console.log(display_name);
 
   // set templating engine
@@ -59,7 +53,7 @@ router.get("/",function(req,res){
   app.set('views','./views');
 
   // display index.html
-  res.render('index', { global_vars: global_vars});
+  res.render('index', { json: json});
 });
 
 app.use("/",router);

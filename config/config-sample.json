@@ -1,7 +1,7 @@
 {
     "web_globals": {
         "favicon": "smiley.ico",
-        "website_title": "GAMER RESUME",
+        "web_title": "GAMER RESUME",
         "fork_me": "false",
         "optional_panel": "False"
     },
@@ -24,9 +24,9 @@
     "steam_api_key": "A8792547389054jdslakfjdksla;hf2E2667567658428",
     
     "optional_panel": {
-        "opt_panel_title": "I'm a little teapot",
-        "opt_panel_image": "teapot.png",
-        "opt_panel_button_text": "How To Pour tea",
-        "opt_panel_URL": "http://lmgtfy.com/howtea"
+        "title": "I'm a little teapot",
+        "image": "teapot.png",
+        "button_text": "How To Pour tea",
+        "URL": "http://lmgtfy.com/howtea"
     }
 }
