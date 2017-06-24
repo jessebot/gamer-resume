@@ -1,0 +1,11 @@
+{
+  "name": "domo-games",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "nodejs domogames.js"
+  },
+  "dependencies": {
+    "express": "latest",
+    "js-yaml": "^3.8.4"
+  }
+}
