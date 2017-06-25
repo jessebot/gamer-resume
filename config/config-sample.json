@@ -21,12 +21,10 @@
         "bethesda_id": "derpies"
     },
     
-    "steam_api_key": "A8792547389054jdslakfjdksla;hf2E2667567658428",
-    
-    "optional_panel": {
-        "title": "I'm a little teapot",
-        "image": "teapot.png",
-        "button_text": "How To Pour tea",
-        "URL": "http://lmgtfy.com/howtea"
+    "steam": {
+      "api_key": "343rDFAGFDSHGDFkfd23435G3547y5twDFFASFWgs",
+      "steam_id": "",
+      "avatar": "",
+      "display_name": ""
     }
 }
