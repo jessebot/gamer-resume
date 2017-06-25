@@ -53,45 +53,30 @@
                 <% } %>
                 </div>
               </div>
-        </div>
-          </div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-              All the social!
-            </a>
-          </h4>
-        </div>
-        <div id="collapseTwo" class="panel-collapse collapse">
-          <div class="panel-body">
+              </div>
+
             <div class="row padMe">
-              <div class="col-md-6">
+              <div class="col-md-3">
                 <div class="row">
-                  <div class="col-xs-12 col-sm-6 col-md-6 imageLower">
-                    <img src="icons/steam.png">
-                  </div>
-                  <div class="col-xs-12 col-sm-5 col-md-6 buttonLower">
-                    <a target="_blank" href="<%= json.social_handles.steam_URL %>" class="btn btn-primary btn-lg" role="button" data-toggle="tooltip" data-placement="bottom" title="Current handle on steam.">Steam</a>
-                  </div>
+                  <a target="_blank" href="<%= json.social_handles.steam_URL %>" role="button" data-toggle="tooltip" data-placement="bottom" title="Current handle on steam."><img src="icons/steam.png"></a>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-3">
                 <div class="row">
-                  <div class="col-xs-12 col-sm-6 col-md-6">
-                    <img src="icons/discord.png">
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-sm-5 col-md-6 buttonLower">
-                    <a target="_blank" href="<%= json.social_handles.discord_username %>" class="btn btn-primary btn-lg" role="button" data-toggle="tooltip" data-placement="bottom" title="Discord username <3.">Discord</a>
-                  </div>
+                  <a target="_blank" href="<%= json.social_handles.discord_username %>" role="button" data-toggle="tooltip" data-placement="bottom" title="Discord username <3."><img src="icons/discord.png"></a>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              <div class="col-md-3">
+                <div class="row">
+                  <a target="_blank" href="<%= json.social_handles.twitch_channel %>" role="button" data-toggle="tooltip" data-placement="bottom" title="Twitch Channel <3."><img src="icons/twitch.png"></a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="row">
+                  <a target="_blank" href="<%= json.social_handles.battlenet_tag %>" role="button" data-toggle="tooltip" data-placement="bottom" title="Battlenet tag for Blizzard."><img src="icons/battlenet.png"></a>
+                </div>
+              </div>
+              </div>
      <% if (json.web_globals.optional_panel) { %>
            <div class="panel panel-default">
               <div class="panel-heading">
