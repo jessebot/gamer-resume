@@ -28,19 +28,36 @@ router.get("/",function(req,res){
         // grab custom steam data
         Steam.ready(function(err) {
           if (err) return console.log(err);
-          var steam = new Steam();
-          steam.resolveVanityURL({vanityurl:custom_vanity}, function(err, data) {
-            // data -> { steamid: '76561197968620915', success: 1 }
-            json.steam.steam_id = data.steamid;
-            console.log(json.steam.steam_id);
-            var converted_json = JSON.stringify(json, null, 2); // spacing level = 2?
-            fs.writeFile('./config/config.json', converted_json, 'utf8'); // write it back
+            var steam = new Steam();
+            steam.resolveVanityURL({vanityurl:custom_vanity}, function(err, data) {
+              // data -> { steamid: '76561197968620915', success: 1 }
+              json.steam.steam_id = data.steamid;
+              var converted_json = JSON.stringify(json, null, 2); // spacing level = 2?
+              fs.writeFile('./config/config.json', converted_json, 'utf8'); // write it back
+            });
+          });
         });
-      });
-    });
-  // stupid name?
-  // var display_name = steam.getPlayerSummaries({key:json.steam_api_key, steam_id});
-  // console.log(display_name);
+
+  fs.readFile('./config/config.json', 'utf8', function (err, data) {
+      if (err) throw err;
+        json = JSON.parse(data);
+        // Retrieve the steam ID from a steam username/communityID
+        api_key = json.steam.api_key;
+        // Set global Steam API Key
+        Steam.key = api_key;
+        // stupid name?
+        Steam.ready(function(err) {
+          if (err) return console.log(err);
+            var steam = new Steam();
+            steam.getPlayerSummaries({key:json.steam.api_key, steamids:json.steam.steam_id}, function(err, data) {
+              json.steam.display_name = data.players.personaname;
+              json.steam.avatar = data.players.avatarfull;
+              json.steam.clan_id = data.players.primaryclanid;
+              var updated_json = JSON.stringify(json, null, 2); // spacing level = 2?
+              fs.writeFile('./config/config.json', updated_json, 'utf8'); // write it back
+            });
+          });
+        });
 
   // set templating engine
   app.engine('html', require('ejs').renderFile);
@@ -49,8 +66,6 @@ router.get("/",function(req,res){
 
   json = JSON.parse(fs.readFileSync('./config/config.json', 'utf8'));
 
-  console.log("this is after the new functions");
-  console.log(json.steam.steam_id);
   // display index.html
   res.render('index', { json: json});
 });
@@ -58,8 +73,15 @@ router.get("/",function(req,res){
 app.use("/",router);
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
+app.use('/js', express.static(__dirname + '/js')); // dfdsafdredirect JS jQuery
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
+app.use('/css', express.static(__dirname + '/css')); // redirect CSS dafsfads
 app.use('/icons', express.static(__dirname + '/icons')); // redirect images
+app.use('/images', express.static(__dirname + '/images')); // redirect images
+
+app.use("/index2",function(req,res){
+  res.sendFile(path + "index2.html");
+});
 
 app.use("*",function(req,res){
   res.sendFile(path + "404.html");

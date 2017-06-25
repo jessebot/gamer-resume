@@ -1,7 +1,4 @@
 @media (min-width: 768px) {
-    .padMe {
-      padding: 0px 120px 0px 120px;
-    }
     .buttonLower {
       padding-top: 50px;
     }
@@ -12,18 +9,12 @@
       padding-left: 30px;
       padding-top: 10px;
     }
-    .imageLower {
-      padding-top: 40px;
-    }
     .starter-template {
       padding: 40px 45px 0px 20px;
     }
 }
 
 @media (min-width: 992px) {
-    .padMe {
-      padding: 0px 80px 0px 80px;
-    }
     .featureImagePad {
       padding-left: 30px;
       padding-left: 30px;
@@ -31,13 +22,6 @@
     }
     .featureTextPad {
       padding-top: 40px;
-    }
-    .buttonLower {
-      padding-top: 60px;
-    }
-
-    .imageLower {
-      padding-top: 11px;
     }
     .starter-template {
       padding: 40px 25px 50px 50px;
