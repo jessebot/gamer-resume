@@ -26,84 +26,90 @@
 
   <body>
   <div class="container">
-  <div class="col-lg-offset-4 col-lg-4" style="margin-top:100px">
-  <div class="well well-sm dash-unit" style="text-align:center; padding:8px 8px 8px 8px;">
-  <dtitle><%= json.profile_data.profile_name %>.</dtitle>
-    </div><!-- /.blackunit -->
-    </div><!-- /.col -->
+  <div class="row featurette">
+  <div class="col-lg-2 col-md-3 col-sm-6">
+    <div class="half-unit" style="text-align:center; padding:8px 8px 8px 8px;">
+      <dtitle><%= json.profile_data.profile_name %>.</dtitle>
+      <hr>
+    </div><!-- /.half-unit -->
+  </div><!-- /.col -->
 
+  <div class="col-lg-10 col-md-9 col-sm-6">
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="half-unit">
                 <dtitle>Steam</dtitle>
                 <hr>
                 <div class="row featurette">
-                <div class="col-md-5 col-md-7">
+                <div class="col-md-5">
                 <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/steam.png">
                 </div>
-                <div class="col-md-7 col-md-5">Profile : <a href="https://steamcommunity.com/id/<%= json.social_handles.steam_vanity_URL %>"><%= json.social_handles.steam_vanity_URL %></a></div>
+                <div class="col-md-7">
+                Current Persona : <%= json.social_handles.display_name %>
+                <p>Profile : <a href="https://steamcommunity.com/id/<%= json.social_handles.steam_vanity_URL %>"><%= json.social_handles.steam_vanity_URL %></a></p>
+                </div>
                 </div>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="half-unit">
                 <dtitle>Discord</dtitle>
                 <hr>
                 <div class="row featurette">
-                  <div class="col-md-5 col-md-7">
+                  <div class="col-md-5">
                     <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/discord.png">
                   </div>
-                  <div class="col-md-7 col-md-5">
+                  <div class="col-md-7">
                     Username : <%= json.social_handles.discord_username %>
                   </div>
                 </div>
               </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="half-unit">
                 <dtitle>Twitch</dtitle>
                 <hr>
                 <div class="row featurette">
-                  <div class="col-md-5 col-md-7">
+                  <div class="col-md-5">
                     <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/twitch.png">
                   </div>
-                  <div class="col-md-7 col-md-5">
+                  <div class="col-md-7">
                   Channel : <a href="https://www.twitch.tv/<%= json.social_handles.twitch_channel %>"><%= json.social_handles.twitch_channel %></a>
                   </div>
                 </div>
                 </div>
                 </div>
-            <div class="row">
-              <div class="col-md-6">
+              <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="half-unit">
                 <dtitle>Battlenet</dtitle>
                 <hr>
                 <div class="row featurette">
-                  <div class="col-md-5 col-md-7">
+                  <div class="col-md-5">
                     <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/battlenet.png">
                   </div>
-                  <div class="col-md-7 col-md-5">
+                  <div class="col-md-7">
                   Battle Tag : <%= json.social_handles.battlenet_tag %>
                   </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="half-unit">
                 <dtitle>Bethesda Launcher</dtitle>
                 <hr>
                 <div class="row featurette">
-                  <div class="col-md-5 col-md-7">
+                  <div class="col-md-5">
                   <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/bethesda.png">
                   </div>
-                  <div class="col-md-7 col-md-5">
+                  <div class="col-md-7">
                   Username : <%= json.social_handles.bethesda_id %>
-                  </div>
-                  </div>
+                  </div> <!-- col-md-7 -->
+                  </div> <!-- row featurette -->
                   </div> <!-- half unit -->
                   </div> <!-- col -->
-                  </div> <!-- row -->
 
+    </div><!-- /.col -->
+    </div><!-- /.row featurette -->
     </div><!-- /.container -->
     <!-- Bootstrap core JavaScript
     -->
