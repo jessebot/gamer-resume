@@ -22,7 +22,7 @@ router.get("/",function(req,res){
         json = JSON.parse(data);
         // Retrieve the steam ID from a steam username/communityID
         custom_vanity = json.social_handles.steam_vanity_URL;
-        api_key = json.steam_api_key;
+        api_key = json.steam.api_key;
         // Set global Steam API Key
         Steam.key = api_key;
         // grab custom steam data
@@ -31,8 +31,8 @@ router.get("/",function(req,res){
           var steam = new Steam();
           steam.resolveVanityURL({vanityurl:custom_vanity}, function(err, data) {
             // data -> { steamid: '76561197968620915', success: 1 }
-            json.social_handles.steam_id = data.steamid;
-            console.log(json.social_handles.steam_id);
+            json.steam.steam_id = data.steamid;
+            console.log(json.steam.steam_id);
             var converted_json = JSON.stringify(json, null, 2); // spacing level = 2?
             fs.writeFile('./config/config.json', converted_json, 'utf8'); // write it back
         });
@@ -50,7 +50,7 @@ router.get("/",function(req,res){
   json = JSON.parse(fs.readFileSync('./config/config.json', 'utf8'));
 
   console.log("this is after the new functions");
-  console.log(json.social_handles.steam_id);
+  console.log(json.steam.steam_id);
   // display index.html
   res.render('index', { json: json});
 });
