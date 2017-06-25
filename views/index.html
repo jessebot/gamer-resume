@@ -25,55 +25,84 @@
   </head>
 
   <body>
-    <div class="container">
-    <div class="well well-sm">
-        <div class="row featurette featureImagePad">
-                <div class="col-sm-6 col-md-5">
-                  <img class="featurette-image img-responsive img-circle"  src="icons/<%= json.profile_data.profile_image %>">
-                </div>
-                <div class="col-sm-6 col-md-7 featureTextPad">
-                <% if (json.profile_data.profile_name.length > 13) { %>
-                      <h3 class="featurette-heading"><%= json.profile_data.profile_name %></h3>
-                <% } else { %>
-                      <h2 class="featurette-heading"><%= json.profile_data.profile_name %>.</h2>
-                <% } %>
-                  <p class="lead special-font"><small><%= json.profile_data.profile_quote %></small></p>
-                <% if (json.profile_data.profile_name.length > 13) { %>
-                  <h5><small><%= json.profile_data.profile_blurb %></small></h5>
-                <% } else { %>
-                  <h4><small><%= json.profile_data.profile_blurb %></small></h4>
-                <% } %>
-                </div>
-              </div>
-              </div>
+  <div class="container">
+  <div class="col-lg-offset-4 col-lg-4" style="margin-top:100px">
+  <div class="well well-sm dash-unit" style="text-align:center; padding:8px 8px 8px 8px;">
+  <dtitle><%= json.profile_data.profile_name %>.</dtitle>
+    </div><!-- /.blackunit -->
+    </div><!-- /.col -->
 
             <div class="row">
-              <div class="col-md-2">
-                <div class="row">
-                <a target="_blank" role="button" data-toggle="popover" data-placement="bottom" title="Steam" data-content="Community URL: <a href='https://steamcommunity.com/id/<%= json.social_handles.steam_URL %>' />"><img src="icons/steam.png"></a>
+              <div class="col-md-4">
+                <div class="half-unit">
+                <dtitle>Steam</dtitle>
+                <hr>
+                <div class="row featurette">
+                <div class="col-md-5 col-md-7">
+                <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/steam.png">
+                </div>
+                <div class="col-md-7 col-md-5">Profile : <a href="https://steamcommunity.com/id/<%= json.social_handles.steam_vanity_URL %>"><%= json.social_handles.steam_vanity_URL %></a></div>
+                </div>
                 </div>
               </div>
-              <div class="col-md-2">
-                <div class="row">
-                  <a target="_blank"  role="button" data-toggle="popover" data-placement="bottom" title="Discord" data-content="Username: <%= json.social_handles.discord_username %>"><img src="icons/discord.png"></a>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="row">
-                <a target="_blank" role="button" data-toggle="popover" data-placement="bottom" title="Twitch" data-content="Channel: https://www.twitch.tv/<%= json.social_handles.twitch_channel %>" ><img src="icons/twitch.png"></a>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="row">
-                  <a target="_blank" role="button" data-toggle="popover" data-placement="bottom" title="Battlenet" data-content="Battle Tag: <%= json.social_handles.battlenet_tag %>"><img style="width: 129px;" src="icons/battlenet.png"></a>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="row">
-                  <a target="_blank" role="button" data-toggle="popover" data-placement="bottom" title="Bethesda Launcher" data-content="Username: <%= json.social_handles.battlenet_tag %>"><img style="height: 129px;" src="icons/bethesda.png"></a>
+              <div class="col-md-4">
+                <div class="half-unit">
+                <dtitle>Discord</dtitle>
+                <hr>
+                <div class="row featurette">
+                  <div class="col-md-5 col-md-7">
+                    <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/discord.png">
+                  </div>
+                  <div class="col-md-7 col-md-5">
+                    Username : <%= json.social_handles.discord_username %>
+                  </div>
                 </div>
               </div>
               </div>
+              <div class="col-md-4">
+                <div class="half-unit">
+                <dtitle>Twitch</dtitle>
+                <hr>
+                <div class="row featurette">
+                  <div class="col-md-5 col-md-7">
+                    <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/twitch.png">
+                  </div>
+                  <div class="col-md-7 col-md-5">
+                  Channel : <a href="https://www.twitch.tv/<%= json.social_handles.twitch_channel %>"><%= json.social_handles.twitch_channel %></a>
+                  </div>
+                </div>
+                </div>
+                </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="half-unit">
+                <dtitle>Battlenet</dtitle>
+                <hr>
+                <div class="row featurette">
+                  <div class="col-md-5 col-md-7">
+                    <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/battlenet.png">
+                  </div>
+                  <div class="col-md-7 col-md-5">
+                  Battle Tag : <%= json.social_handles.battlenet_tag %>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="half-unit">
+                <dtitle>Bethesda Launcher</dtitle>
+                <hr>
+                <div class="row featurette">
+                  <div class="col-md-5 col-md-7">
+                  <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/bethesda.png">
+                  </div>
+                  <div class="col-md-7 col-md-5">
+                  Username : <%= json.social_handles.bethesda_id %>
+                  </div>
+                  </div>
+                  </div> <!-- half unit -->
+                  </div> <!-- col -->
+                  </div> <!-- row -->
 
     </div><!-- /.container -->
     <!-- Bootstrap core JavaScript
