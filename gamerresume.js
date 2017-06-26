@@ -4,10 +4,6 @@ var app = express();
 var https = require('https');
 var http = require('https');
 var fs = require('fs');
-var options = {
-  key : fs.readFileSync('/etc/letsencrypt/live/jessebot.io/privkey.pem'),
-  cert : fs.readFileSync('/etc/letsencrypt/live/jessebot.io/cert.pem')
-};
 var router = express.Router();
 var path = __dirname + '/views/';
 var ejs = require('ejs');
