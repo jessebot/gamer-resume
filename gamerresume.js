@@ -1,14 +1,19 @@
 // Hacked together poorly by DomoJesse aka Jessebot
 var express = require("express");
 var app = express();
+var https = require('https');
+var http = require('https');
+var fs = require('fs');
+var options = {
+  key : fs.readFileSync('/etc/letsencrypt/live/jessebot.io/privkey.pem'),
+  cert : fs.readFileSync('/etc/letsencrypt/live/jessebot.io/cert.pem')
+};
 var router = express.Router();
 var path = __dirname + '/views/';
-var fs = require('fs');
 var ejs = require('ejs');
 
 // steam lolz
 var Steam = require('steam-webapi');
-
 
 router.use(function (req,res,next) {
   console.log("/" + req.method);
@@ -71,23 +76,35 @@ router.get("/",function(req,res){
 });
 
 app.use("/",router);
-app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
-app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
-app.use('/js', express.static(__dirname + '/js')); // dfdsafdredirect JS jQuery
-app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
-app.use('/css', express.static(__dirname + '/css')); // redirect CSS dafsfads
-app.use('/icons', express.static(__dirname + '/icons')); // redirect images
-app.use('/images', express.static(__dirname + '/images')); // redirect images
 
-app.use("/index2",function(req,res){
-  res.sendFile(path + "index2.html");
-});
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
+
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
+
+app.use('/js', express.static(__dirname + '/js')); // dfdsafdredirect JS jQuery
+
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
+
+app.use('/css', express.static(__dirname + '/css')); // redirect CSS dafsfads
+
+app.use('/icons', express.static(__dirname + '/icons')); // redirect images
+
+app.use('/images', express.static(__dirname + '/images')); // redirect images
 
 app.use("*",function(req,res){
   res.sendFile(path + "404.html");
 });
 
-app.listen(8081,function(){
-  console.log("Live at Port 8081");
+/*
+https.createServer(options, app).listen(8081, function () {
+  console.log('Secure Gamer Resume Started!');
 });
 
+http.createServer(app).listen(8082, function () {
+  console.log('Gamer Resume Started!');
+});
+*/
+
+app.listen(8081, function(){
+  console.log("Live at Port 8081");
+});
