@@ -29,10 +29,13 @@
   <div class="row">
   <div class="row featurette">
   <div class="col-lg-4 col-md-4 col-sm-6">
-    <div class="half-unit">
+    <div class="dash-unit">
       <dtitle><%= json.profile_data.profile_name %>.</dtitle>
       <hr>
-    </div><!-- /.half-unit -->
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <img src="<%= json.steam.avatar %>" alt="(Avatar)" class="img-responsive img-rounded center-block" style="padding-top: 20px;">
+  </div>
+    </div><!-- /.dash-unit -->
   </div><!-- /.col -->
 
               <div class="col-lg-4 col-md-4 col-sm-6">
@@ -43,11 +46,9 @@
                 <div class="col-lg-3 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
                 <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/steam.png">
                 </div>
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                <h1><span aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Curent persona (Display Name)" class="li_user fs1"></span> <%= json.social_handles.display_name %>
-                <p><span aria-hidden="true" class="li_world fs1"></span> <a href="https://steamcommunity.com/id/<%= json.social_handles.steam_vanity_URL %>"><%= json.social_handles.steam_vanity_URL %></a></p></h1>
+                <h1><span aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Curent persona (Display Name)" class="li_user fs1"></span> <%= json.steam.display_name %>
+                <p><span aria-hidden="true" class="li_world fs1" data-toggle="tooltip" data-placement="bottom" title="Community profile page"></span> <a href="https://steamcommunity.com/id/<%= json.social_handles.steam_vanity_URL %>"><%= json.social_handles.steam_vanity_URL %></a></p></h1>
 
-                </div>
                 </div>
               </div>
               </div>

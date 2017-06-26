@@ -50,9 +50,9 @@ router.get("/",function(req,res){
           if (err) return console.log(err);
             var steam = new Steam();
             steam.getPlayerSummaries({key:json.steam.api_key, steamids:json.steam.steam_id}, function(err, data) {
-              json.steam.display_name = data.players.personaname;
-              json.steam.avatar = data.players.avatarfull;
-              json.steam.clan_id = data.players.primaryclanid;
+              json.steam["display_name"] = data.players[0].personaname;
+              json.steam["avatar"] = data.players[0].avatarfull;
+              json.steam["clan_id"] = data.players[0].primaryclanid;
               var updated_json = JSON.stringify(json, null, 2); // spacing level = 2?
               fs.writeFile('./config/config.json', updated_json, 'utf8'); // write it back
             });
