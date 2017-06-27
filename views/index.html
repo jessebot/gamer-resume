@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" type="image/x-icon" href="icons/<%= json.web_globals.favicon %>">
+    <meta name="description" content="Gamer Resume Website">
+    <meta name="author" content="Jesse Hitch">
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
 
     <title><%= json.web_globals.web_title %></title>
 
@@ -14,8 +14,6 @@
 
     <link href="css/main.css" rel="stylesheet">
     <link href="css/font-style.css" rel="stylesheet">
-    <link href="css/flexslider.css" rel="stylesheet">
-
       
     <style type="text/css">
       body {
@@ -43,14 +41,16 @@
                 <dtitle>Steam</dtitle>
                 <hr>
                 <div class="row featurette">
-                <div class="col-lg-3 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
+                <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
                 <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/steam.png">
                 </div>
-                <span aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Curent persona (Display Name)" class="li_user fs1"></span> <%= json.steam.display_name %>
+                <div data-toggle="tooltip" data-placement="top" title="Curent Steam Persona (Display Name)">
+                <span aria-hidden="true" class="li_user fs1"></span> <%= json.steam.display_name %>
+                </div>
                 <p></p>
-                <span aria-hidden="true" class="li_world fs1" data-toggle="tooltip" data-placement="bottom" title="Community profile page"></span> <a href="https://steamcommunity.com/id/<%= json.social_handles.steam_vanity_URL %>"><%= json.social_handles.steam_vanity_URL %></a>
+                <div data-toggle="tooltip" data-placement="top" title="Community profile page"><span aria-hidden="true" class="li_world fs1" ></span> <a href="https://steamcommunity.com/id/<%= json.social_handles.steam_vanity_URL %>" target="_blank"><%= json.social_handles.steam_vanity_URL %></a></div>
                 <p></p>
-                <span aria-hidden="true" class="li_heart fs1" data-toggle="tooltip" data-placement="bottom" title="Primary Group/Clan"></span> <a href="http://steamcommunity.com/gid/<%= json.steam.clan_id %>"><%= json.steam.clan_id %></a>
+                <div data-toggle="tooltip" data-placement="top" title="Primary Group/Clan"><span aria-hidden="true" class="li_heart fs1" ></span> <a href="http://steamcommunity.com/gid/<%= json.steam.clan_id %>" target="_blank"><%= json.steam.clan_id %></a></div>
 
                 </div>
               </div>
@@ -60,27 +60,32 @@
                 <dtitle>Discord</dtitle>
                 <hr>
                 <div class="row featurette">
-                    <div class="col-lg-3 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
+                    <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
                     <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/discord.png">
                   </div>
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                <p></p>
-                  <h1><span aria-hidden="true" class="li_user fs1"></span> <%= json.social_handles.discord_username %></h1>
-
-                  </div>
+                  <h7>
+                  <p></p>
+                <div data-toggle="tooltip" data-placement="top" title="Discord Username">
+                <span aria-hidden="true" class="li_user fs1"></span> <%= json.social_handles.discord_username %>
+                </div>
+                <h7>
                 </div>
               </div>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="col-lg-4  col-md-4 col-sm-6">
                 <div class="half-unit">
                 <dtitle>Twitch</dtitle>
                 <hr>
                 <div class="row featurette">
-                    <div class="col-lg-3 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
+                    <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
                     <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/twitch.png">
                   </div>
                 <p></p>
-                  <h1><span aria-hidden="true" class="li_video fs1"></span> <a href="https://www.twitch.tv/<%= json.social_handles.twitch_channel %>"><%= json.social_handles.twitch_channel %></a></h1>
+                <div data-toggle="tooltip" data-placement="top" title="Twitch Channel">
+                <h7>
+                <span aria-hidden="true" class="li_video fs1"></span> <a href="https://www.twitch.tv/<%= json.social_handles.twitch_channel %>" target="_blank"><%= json.social_handles.twitch_channel %></a>
+                 </h7>
+                </div>
                 </div>
                 </div>
                 </div>
@@ -89,13 +94,14 @@
                 <dtitle>Battlenet</dtitle>
                 <hr>
                 <div class="row featurette">
-                    <div class="col-lg-3 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
+                    <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
                     <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/battlenet.png">
                   </div>
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                 <p></p>
-                <h1><span aria-hidden="true" class="li_user fs1"></span> <%= json.social_handles.battlenet_tag %></h1>
-
+                <div data-toggle="tooltip" data-placement="top" title="Blizzard Battlenet Battletag">
+                <h7>
+                <span aria-hidden="true" class="li_user fs1"></span> <%= json.social_handles.battlenet_tag %>
+                </h7>
                   </div>
                   </div>
                 </div>
@@ -105,13 +111,15 @@
                 <dtitle>Bethesda Launcher</dtitle>
                 <hr>
                 <div class="row featurette">
-                    <div class="col-lg-3 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
+                    <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
                   <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/bethesda.png">
                   </div>
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                 <p></p>
-                <h1><span aria-hidden="true" class="li_user fs1"></span><%= json.social_handles.bethesda_id %></h1>
-                  </div> <!-- col-md-7 -->
+                <h7>
+                <div data-toggle="tooltip" data-placement="top" title="Bethesda ID">
+                <span aria-hidden="true" class="li_user fs1"></span><%= json.social_handles.bethesda_id %>
+                </h7>
+                  </div> <!-- tooltip -->
                   </div> <!-- row featurette -->
                   </div> <!-- half unit -->
                   </div> <!-- col -->
@@ -123,20 +131,6 @@
     -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    
-	<!-- NOTY JAVASCRIPT -->
-	<script type="text/javascript" src="js/noty/jquery.noty.js"></script>
-	<script type="text/javascript" src="js/noty/layouts/top.js"></script>
-	<script type="text/javascript" src="js/noty/layouts/topLeft.js"></script>
-	<script type="text/javascript" src="js/noty/layouts/topRight.js"></script>
-	<script type="text/javascript" src="js/noty/layouts/topCenter.js"></script>
-	
-	<!-- You can add more layouts if you want -->
-	<script type="text/javascript" src="js/noty/themes/default.js"></script>
-    <!-- <script type="text/javascript" src="assets/js/dash-noty.js"></script> This is a Noty bubble when you init the theme-->
-	<script src="js/jquery.flexslider.js" type="text/javascript"></script>
-
-    <script type="text/javascript" src="js/admin.js"></script>
     <script>
         $(function () {
           $('[data-toggle="tooltip"]').tooltip()

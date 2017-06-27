@@ -1,9 +1,13 @@
 // Hacked together poorly by DomoJesse aka Jessebot
 var express = require("express");
-var app = express();
+var fs = require('fs');
 var https = require('https');
 var http = require('https');
-var fs = require('fs');
+var options = {
+  key: fs.readFileSync('FILL ME IN'),
+  cert: fs.readFileSync('FILL ME IN')
+  };
+var app = express();
 var router = express.Router();
 var path = __dirname + '/views/';
 var ejs = require('ejs');
@@ -91,16 +95,16 @@ app.use("*",function(req,res){
   res.sendFile(path + "404.html");
 });
 
-/*
+http.createServer(app).listen(8082, function () {
+  console.log('Gamer Resume Started!');
+});
+
 https.createServer(options, app).listen(8081, function () {
   console.log('Secure Gamer Resume Started!');
 });
 
-http.createServer(app).listen(8082, function () {
-  console.log('Gamer Resume Started!');
-});
-*/
-
+/*
 app.listen(8081, function(){
   console.log("Live at Port 8081");
 });
+*/

@@ -1,9 +1,7 @@
 {
     "web_globals": {
-        "favicon": "smiley.ico",
         "web_title": "GAMER RESUME",
-        "fork_me": "false",
-        "optional_panel": "False"
+        "fork_me": "false"
     },
 
     "profile_data": {
