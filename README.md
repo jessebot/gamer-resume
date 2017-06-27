@@ -1,9 +1,9 @@
 # gamer-resume
-(PROJECT STILL UNDER DEVELOPMENT)
 A resume for gamers to social with each other. This is based loosely off of
 [tiny-personal-resume](https://github.com/jessebot/tiny_personal_website), but
-that is more geared towards coding professionals. This is entirely for fun! :D
-Working demo available at https://domo.games.
+that is more geared towards coding professionals, and is python based.
+This is entirely for fun and primarily utilizes nodejs! :D
+Working demo available at https://domo.games
 
 # Setup
 
