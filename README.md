@@ -28,6 +28,7 @@ Working demo available at https://domo.games
 ## Create a json file
 ### Copy the existing sample to a new file named config.json, then user a
 ### text editor to change the values to your usernames
+#### In particular, you'll need a steam API key to utilize this fully.
 
 `cp config/sample-config.json config/config.json`
 
