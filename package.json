@@ -1,6 +1,6 @@
 {
   "name": "gamer-resume",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Node.js app for gamers using express.",
   "main": "gamerresume.js",
   "scripts": {
