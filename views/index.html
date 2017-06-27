@@ -44,14 +44,15 @@
                 <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
                 <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/steam.png">
                 </div>
-                <div data-toggle="tooltip" data-placement="top" title="Curent Steam Persona (Display Name)">
-                <span aria-hidden="true" class="li_user fs1"></span> <%= json.steam.display_name %>
+                <div style="text-indent: 15px; padding-top: 10px;">
+
+                <div data-toggle="tooltip" data-placement="top" title="Curent Steam Persona - links to community profile">
+                <span aria-hidden="true" class="li_user fs1"></span><a href="https://steamcommunity.com/id/<%= json.social_handles.steam_vanity_URL %>" target="_blank"><%= json.steam.display_name %></a>
                 </div>
-                <p></p>
-                <div data-toggle="tooltip" data-placement="top" title="Community profile page"><span aria-hidden="true" class="li_world fs1" ></span> <a href="https://steamcommunity.com/id/<%= json.social_handles.steam_vanity_URL %>" target="_blank"><%= json.social_handles.steam_vanity_URL %></a></div>
                 <p></p>
                 <div data-toggle="tooltip" data-placement="top" title="Primary Group/Clan"><span aria-hidden="true" class="li_heart fs1" ></span> <a href="http://steamcommunity.com/gid/<%= json.steam.clan_id %>" target="_blank"><%= json.steam.clan_id %></a></div>
 
+                </div>
                 </div>
               </div>
               </div>
@@ -64,8 +65,7 @@
                     <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/discord.png">
                   </div>
                   <h7>
-                  <p></p>
-                <div data-toggle="tooltip" data-placement="top" title="Discord Username">
+                  <div data-toggle="tooltip" data-placement="top" title="Discord Username" style="text-indent: 15px; padding-top: 18px;">
                 <span aria-hidden="true" class="li_user fs1"></span> <%= json.social_handles.discord_username %>
                 </div>
                 <h7>
@@ -80,8 +80,7 @@
                     <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
                     <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/twitch.png">
                   </div>
-                <p></p>
-                <div data-toggle="tooltip" data-placement="top" title="Twitch Channel">
+                <div data-toggle="tooltip" data-placement="top" title="Twitch Channel" style="text-indent: 15px; padding-top: 18px;">
                 <h7>
                 <span aria-hidden="true" class="li_video fs1"></span> <a href="https://www.twitch.tv/<%= json.social_handles.twitch_channel %>" target="_blank"><%= json.social_handles.twitch_channel %></a>
                  </h7>
@@ -97,8 +96,7 @@
                     <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
                     <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/battlenet.png">
                   </div>
-                <p></p>
-                <div data-toggle="tooltip" data-placement="top" title="Blizzard Battlenet Battletag">
+                <div data-toggle="tooltip" data-placement="top" title="Blizzard Battlenet Battletag" style="text-indent: 15px; padding-top: 18px;">
                 <h7>
                 <span aria-hidden="true" class="li_user fs1"></span> <%= json.social_handles.battlenet_tag %>
                 </h7>
@@ -114,9 +112,8 @@
                     <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
                   <img class="featurette-image img-responsive center-block" style="height: 64px;" src="icons/bethesda.png">
                   </div>
-                <p></p>
                 <h7>
-                <div data-toggle="tooltip" data-placement="top" title="Bethesda ID">
+                <div data-toggle="tooltip" data-placement="top" title="Bethesda ID" style="text-indent: 15px; padding-top: 18px;">
                 <span aria-hidden="true" class="li_user fs1"></span><%= json.social_handles.bethesda_id %>
                 </h7>
                   </div> <!-- tooltip -->
