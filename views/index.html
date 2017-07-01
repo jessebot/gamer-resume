@@ -8,7 +8,7 @@
     <meta name="author" content="Jesse Hitch">
     <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
 
-    <title>DERP DERP</title>
+    <title><%= json.web_globals.web_title %></title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 
@@ -24,7 +24,7 @@
 
     <meta property="og:url" content="https://domo.games">
     <meta property="og:image" content="https://domo.games/images/facebook_og.jpg">
-    <meta property="og:title" content="Gamer Resume : Test edition">
+    <meta property="og:title" content="Gamer Resume : <%= json.profile_data.profile_name %>">
     <meta property="og:description" content="An aggregation of gaming related contact information. Hopefully speeds up random interactions at LAN parties <3">
     <meta property="og:type" content="profile">
 
@@ -46,12 +46,12 @@
           </div><!-- /.col -->
 
         <div class="col-lg-4 col-md-4 col-sm-6">
-          <div class="half-unit">
-            <dtitle>Steam</dtitle>
+          <div class="bhoechie-tab-container half-unit">
+          <center><dtitle>Steam</dtitle></center>
             <hr>
             <div class="row featurette">
-              <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
-                <img class="featurette-image img-responsive center-block" style="height: 60px;" src="icons/steam.png">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <img class="featurette-image img-responsive center-block" style="height: 42px;" src="icons/steam.png">
               </div> <!-- img col -->
               <div style="text-indent: 15px; padding-top: 10px;">
                 <div data-toggle="tooltip" data-placement="top" title="Curent Steam Persona - links to community profile">
