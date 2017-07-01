@@ -8,11 +8,12 @@
     <meta name="author" content="Jesse Hitch">
     <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
 
-    <title><%= json.web_globals.web_title %></title>
+    <title>DERP DERP</title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 
     <link href="css/main.css" rel="stylesheet">
+    <link href="css/tabs.css" rel="stylesheet">
     <link href="css/font-style.css" rel="stylesheet">
       
     <style type="text/css">
@@ -23,7 +24,7 @@
 
     <meta property="og:url" content="https://domo.games">
     <meta property="og:image" content="https://domo.games/images/facebook_og.jpg">
-    <meta property="og:title" content="Gamer Resume : <%= json.profile_data.profile_name %>">
+    <meta property="og:title" content="Gamer Resume : Test edition">
     <meta property="og:description" content="An aggregation of gaming related contact information. Hopefully speeds up random interactions at LAN parties <3">
     <meta property="og:type" content="profile">
 
@@ -67,64 +68,126 @@
         </div><!-- /.col -->
 
         <div class="col-lg-4 col-md-4 col-sm-6">
-          <div class="half-unit">
-            <dtitle>Discord</dtitle>
-            <hr>
-            <div class="row featurette">
-              <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
-                <img class="featurette-image img-responsive center-block" style="height: 60px;" src="icons/discord.png">
-              </div> <!-- img col -->
-                <div data-toggle="tooltip" data-placement="top" title="Discord Username" style="text-indent: 15px; padding-top: 18px;">
-                  <h7><span aria-hidden="true" class="li_user fs1"></span> <%= json.social_handles.discord_username %></h7>
-                </div><!-- tooltip -->
-            </div> <!-- / row featurette -->
-          </div><!-- /.half-unit -->
-        </div><!-- /.col -->
-
-        <div class="col-lg-4  col-md-4 col-sm-6">
-          <div class="half-unit">
-            <dtitle>Twitch</dtitle>
-            <hr>
-            <div class="row featurette">
-                <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
-                  <img class="featurette-image img-responsive center-block" style="height: 60px;" src="icons/twitch.png">
-                </div> <!-- image col -->
-                <div data-toggle="tooltip" data-placement="top" title="Twitch Channel" style="text-indent: 15px; padding-top: 18px;">
-                  <h7><span aria-hidden="true" class="li_video fs1"></span> <a href="https://www.twitch.tv/<%= json.social_handles.twitch_channel %>" target="_blank"><%= json.social_handles.twitch_channel %></a></h7>
-                </div><!-- tooltip -->
-            </div> <!-- / row feareutte -->
-          </div><!-- /.half-unit -->
-        </div><!-- /.col -->
-
-        <div class="col-lg-4 col-md-4 col-sm-6">
-          <div class="half-unit">
-            <dtitle>Battlenet</dtitle>
-            <hr>
-            <div class="row featurette">
-              <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
-                <img class="featurette-image img-responsive center-block" style="height: 60px;" src="icons/battlenet.png">
-              </div><!-- image column -->
-              <div data-toggle="tooltip" data-placement="top" title="Blizzard Battlenet Battletag" style="text-indent: 15px; padding-top: 18px;">
-                <h7><span aria-hidden="true" class="li_user fs1"></span> <%= json.social_handles.battlenet_tag %></h7>
-              </div><!-- tool tip -->
-            </div> <!-- / row featurette  -->
-          </div><!-- /.half-unit -->
-        </div><!-- /.col -->
-
-        <div class="col-lg-4 col-md-4 col-sm-6">
-          <div class="half-unit">
-            <dtitle>Bethesda Launcher</dtitle>
-            <hr>
-            <div class="row featurette">
-              <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-5">
-                <img class="featurette-image img-responsive center-block" style="height: 60px;" src="icons/bethesda.png">
+        <div class="bhoechie-tab-container half-unit">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 bhoechie-tab-menu">
+              <div class="list-group">
+                <a href="#" class="list-group-item active text-center">
+                  <p></p>
+                  <p><img src="/icons/bethesda.png" style="width: 30px;"></p>
+                  </a>
+                  <a href="#" class="list-group-item text-center">
+                  <p></p>
+                  <p><img src="/icons/battlenet.png" style="width: 42px;"></p>
+                </a>
               </div>
-              <div data-toggle="tooltip" data-placement="top" title="Bethesda ID" style="text-indent: 15px; padding-top: 18px;">
-                <h7><span aria-hidden="true" class="li_user fs1"></span><%= json.social_handles.bethesda_id %></h7>
-              </div> <!-- tooltip -->
-            </div> <!-- row featurette -->
-          </div> <!-- half unit -->
-        </div> <!-- col -->
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+                <!-- Bethesda section -->
+                <div class="bhoechie-tab-content active">
+                    <center>
+                      <dtitle><span aria-hidden="true" class="li_star fs1"></span>  Bethesda</dtitle>
+                      <hr>
+                      <p>
+                        <div data-toggle="tooltip" data-placement="top" title="Bethesda ID" style="text-indent: 15px; padding-top: 18px;">
+                          <h7><span aria-hidden="true" class="li_user fs1"></span><%= json.social_handles.bethesda_id %></h7>
+                        </div> <!-- tooltip -->
+                      </p>
+                    </center>
+                </div><!-- tab content-->
+                <!-- Blizzard -->
+                <div class="bhoechie-tab-content">
+                <center>
+                <dtitle><span aria-hidden="true" class="li_star fs1"></span> Blizzard</dtitle>
+                <hr>
+                  <p>
+                    <div data-toggle="tooltip" data-placement="top" title="Blizzard Battlenet Battletag" style="text-indent: 15px; padding-top: 18px;">
+                      <h7><span aria-hidden="true" class="li_user fs1"></span> <%= json.social_handles.battlenet_tag %></h7>
+                    </div><!-- tool tip -->
+                  </p>
+                </center>
+                </div><!-- tab content-->
+                </div><!-- tab -->
+          </div><!-- /.half-unit -->
+          </div><!-- /.col -->
+
+        <div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="bhoechie-tab-container half-unit">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 bhoechie-tab-menu">
+              <div class="list-group">
+                <a href="#" class="list-group-item active text-center">
+                  <p></p>
+                  <p><img src= "/icons/discord.png" style="width: 42px;"></p>
+                  </a>
+                  <a href="#" class="list-group-item text-center">
+                  <p></p>
+                  <p><img src= "/icons/Skype.png" style="width: 36px;padding-top: 2px;padding-bottom: 2px;"></p>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+                <!-- Discord section -->
+                <div class="bhoechie-tab-content active">
+                    <center>
+                    <dtitle><span aria-hidden="true" class="li_sound fs1"></span> Discord</dtitle>
+                      <hr>
+                  <p>
+                      <h7><span aria-hidden="true" class="li_user fs1"></span> <%= json.social_handles.discord_username %></h7>
+                    </center>
+                  </p>
+                </div>
+                <!-- Skype -->
+                <div class="bhoechie-tab-content">
+                <center>
+                    <dtitle><span aria-hidden="true" class="li_sound fs1"></span> Skpye</dtitle>
+                <hr>
+                  <p>
+                     <h7><span aria-hidden="true" class="li_user fs1"></span> derpgamerherp</h7>
+                  </p>
+                    </center>
+                </div>
+                </div><!-- tab -->
+          </div><!-- /.half-unit -->
+          </div><!-- /.col -->
+
+        <div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="bhoechie-tab-container half-unit">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 bhoechie-tab-menu">
+              <div class="list-group">
+                <a href="#" class="list-group-item active text-center">
+                  <p></p>
+                  <p><img src= "/icons/twitch.png" style="width: 42px;"></p>
+                  </a>
+                  <a href="#" class="list-group-item text-center">
+                  <p></p>
+                  <p><img src= "/icons/youtube.png" style="width: 42px;"></p>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+                <!-- Twitch section -->
+                <div class="bhoechie-tab-content active">
+                    <center>
+                    <dtitle><span aria-hidden="true" class="li_video fs1"></span> Twitch</dtitle>
+                      <hr>
+                  <p>
+                      <h7><span aria-hidden="true" class="li_user fs1"></span> <a href="https://www.twitch.tv/<%= json.social_handles.twitch_channel %>" target="_blank"><%= json.social_handles.twitch_channel %></a></h7>
+                  </p>
+                    </center>
+                </div>
+                <!-- youtube -->
+                <div class="bhoechie-tab-content">
+                <center>
+                    <dtitle><span aria-hidden="true" class="li_video fs1"></span> YouTube</dtitle>
+                <hr>
+                  <p> </p>
+                  <p>
+                     <h7><span aria-hidden="true" class="li_user fs1"></span> derpgamerherp</h7>
+                  </p>
+                    </center>
+                </div>
+                </div><!-- tab -->
+          </div><!-- /.half-unit -->
+          </div><!-- /.col -->
 
       </div><!-- /.row ALL CARDS-->
     </div><!-- /.container MAIN-->
@@ -135,7 +198,21 @@
     <script>
         $(function () {
           $('[data-toggle="tooltip"]').tooltip()
-        })
+          });
+        $(document).ready(function() {
+            $("div.list-group>a").click(function(e) {
+                e.preventDefault();
+                $(this).siblings('a.active').removeClass("active");
+                $(this).addClass("active");
+                var HalfUnit = $(this).parent().parent().parent()
+                var tabChildren = HalfUnit.children("div.bhoechie-tab").children("div.bhoechie-tab-content");
+                var tabChildrenActive = HalfUnit.children("div.bhoechie-tab").children("div.bhoechie-tab-content.active");
+                var index = $(this).index();
+                $(tabChildren).addClass("active");
+                $(tabChildrenActive).removeClass("active");
+              });
+          });
+
     </script>
   </body>
 </html>
