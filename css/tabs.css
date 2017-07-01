@@ -26,6 +26,12 @@ div.bhoechie-tab-menu div.list-group{
 div.bhoechie-tab-menu div.list-group>a{
   margin-bottom: 0;
   padding: 0px 0px 0px 0px;
+  border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+  background-color: #3d3d3d;
+  background-image: url('../images/sep-half.png');
+  color: #ffffff; 
+  border-color: #383737;
 }
 div.bhoechie-tab-menu div.list-group>a .fa {
   border-top-right-radius: 0;
@@ -73,6 +79,9 @@ div.bhoechie-tab-menu div.list-group>a.active:after{
 div.bhoechie-tab-content{
   padding-left: 10px;
   padding-top: 10px;
+  position: relative;
+  top: 50%;
+  transform: translateY(+25%);
 }
 
 div.bhoechie-tab div.bhoechie-tab-content{
