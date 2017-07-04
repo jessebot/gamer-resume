@@ -1,3 +1,5 @@
+
+/*  bhoechie tab */
 div.bhoechie-tab-container{
   z-index: 10;
   padding: 0 !important;
@@ -88,68 +90,4 @@ div.bhoechie-tab div.bhoechie-tab-content{
 
 div.bhoechie-tab div.bhoechie-tab-content:not(.active){
   display: none;
-}
-
-.tab-pane {
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-  position: relative;
-  top: 40%;
-  transform: translateY(+25%);
-}
-
-.nav-tabs {
-    margin: 0 0 0 0;
-    border-bottom: 1px solid transparent;
-    background-image: url('../images/sep-half.png');
-    background-color: #3d3d3d;
-}
-
-.nav-tabs>li {
-    background-image: url('../images/sep-half.png');
-    border-top: 1px solid transparent;
-    border-left: 1px solid transparent;
-    border-right: 1px solid #333;
-    border-bottom: 1px solid #333;
-    padding-left: 0;
-    padding-right: 0;
-    text-align: center;
-}
-
-.nav-tabs>li>a,
-.nav-tabs>li>a:focus,
-.nav-tabs>li>a:hover {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  background-color: #3d3d3d;
-  background-image: url('../images/sep-half.png');
-}
-
-.nav-tabs>li>a:focus,
-.nav-tabs>li>a:hover {
-  border-color: #1f1f1f;
-}
-
-.nav-tabs>li.active>a,
-.nav-tabs>li.active>a:focus,
-.nav-tabs>li.active>a:hover {
-  background-color: #333333;
-  background-image: url('../images/sep-half.png');
-  border-bottom: 1px solid #333333;
-  border-top: 1px solid transparent;
-  border-left: 1px solid #333333;
-  border-right: 1px solid transparent;
-}
-
-.nav-tabs>li.active>a:after {
-  content: '';
-  position: absolute;
-  left: 28%;
-  top: 110%;
-  margin-top: -13px;
-  border-bottom: 20px solid transparent;
-  border-top: 20px solid #333333;
-  border-right: 25px solid transparent;
-  border-left: 25px solid transparent;
 }

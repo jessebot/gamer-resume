@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 
     <link href="css/main.css" rel="stylesheet">
-    <link href="css/tabs2.css" rel="stylesheet">
+    <link href="css/tabs.css" rel="stylesheet">
     <link href="css/font-style.css" rel="stylesheet">
       
     <style type="text/css">
@@ -39,7 +39,7 @@
     <div class="container">
       <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-6">
-            <div class="dash-unit bhoechie-tab-container">
+            <div class="dash-unit">
               <dtitle>Gamer Call Card: <%= json.profile_data.profile_name %></dtitle>
               <hr>
               <img src="<%= json.steam.avatar %>" alt="(Avatar)" class="img-responsive img-rounded center-block" style="width: 100; padding-top: 20px;" data-toggle="tooltip" data-placement="top" title="Current Steam avatar.">
@@ -47,65 +47,71 @@
           </div><!-- /.col -->
 
         <div class="col-lg-4 col-md-4 col-sm-6">
-          <div class="dash-unit bhoechie-tab-container">
-            <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active col-lg-4 col-md-4 col-sm-4">
-                <a href="#steam" aria-control="steam" role="tab" data-toggle="tab">
-                  <img src="icons/steam.png" style="width: 64px;">
-                </a>
-                </li>
-              <li role="presentation" class="col-lg-4 col-md-4 col-sm-4">
-                <a href="#blizzard" aria-control="blizzard" role="tab" data-toggle="tab">
-                  <img src="/icons/battlenet.png" style="width: 64px;">
-                </a>
-              </li>
-              <li role="presentation" class="col-lg-4 col-md-4 col-sm-4">
-                <a href="#bethesda" aria-control="bethesda" role="tab" data-toggle="tab">
-                  <img src="/icons/bethesda.png" style="height: 64px;">
-                </a>
-              </li>
-            </ul>
-            <div class="tab-content">
-              <!-- Steam -->
-              <div role="tabpanel" class="tab-pane active" id="steam">
+          <div class="bhoechie-tab-container half-unit">
+          <center><dtitle>Steam</dtitle></center>
+            <hr>
+            <div class="row featurette">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding-top: 8px;">
+                <img class="featurette-image img-responsive center-block" style="height: 48px;" src="icons/steam.png">
+              </div> <!-- img col -->
+              <div style="text-indent: 15px; padding-top: 10px;">
+                <div data-toggle="tooltip" data-placement="top" title="Curent Steam Persona - links to community profile">
+                    <span aria-hidden="true" class="li_user fs1"></span> <a href="https://steamcommunity.com/id/<%= json.social_handles.steam_vanity_URL %>" target="_blank"><%= json.steam.display_name %></a>
+                </div> <!-- tooltip -->
+                <p></p>
+                <div data-toggle="tooltip" data-placement="top" title="Primary Group/Clan">
+                  <span aria-hidden="true" class="li_heart fs1"></span>
+                  <a href="http://steamcommunity.com/gid/<%= json.steam.clan_id %>" target="_blank"><%= json.steam.clan_id %></a>
+                </div> <!-- tooltip -->
+              </div> <!-- text padding -->
+            </div> <!-- / row featuette -->
+          </div><!-- /.half-unit -->
+        </div><!-- /.col -->
 
+        <div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="bhoechie-tab-container half-unit">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+              <div class="list-group">
+                <a href="#" class="list-group-item active text-center">
+                  <p></p>
+                  <p><img src="/icons/bethesda.png" style="width: 32px;"></p>
+                  </a>
+                  <a href="#" class="list-group-item text-center">
+                  <p></p>
+                  <p><img src="/icons/battlenet.png" style="width: 40px;"></p>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+                <!-- Bethesda section -->
+                <div class="bhoechie-tab-content active">
+                    <center>
+                      <dtitle><span aria-hidden="true" class="li_star fs1"></span>  Bethesda</dtitle>
+                      <hr>
+                      <p>
+                        <div data-toggle="tooltip" data-placement="top" title="Bethesda ID">
+                        <h7>
+                        <span aria-hidden="true" class="li_user fs1"></span><%= json.social_handles.bethesda_id %>
+                        </h7>
+                        </div> <!-- tooltip -->
+                      </p>
+                    </center>
+                </div><!-- tab content-->
+                <!-- Blizzard -->
+                <div class="bhoechie-tab-content">
                 <center>
-                  <dtitle><span aria-hidden="true" class="li_star fs1"></span> Steam</dtitle>
-                  <hr>
-                  <div data-toggle="tooltip" data-placement="top" title="Curent Steam Persona - links to community profile">
-                    <h7>
-                      <span aria-hidden="true" class="li_user fs1"></span> <a href="https://steamcommunity.com/id/<%= json.social_handles.steam_vanity_URL %>" target="_blank"><%= json.steam.display_name %></a>
-                    </h7>
-                  </div> <!-- tooltip -->
-                </center>
-              </div><!-- tab panel-->
-              <!-- Blizzard -->
-              <div role="tabpanel" class="tab-pane" id="blizzard">
-              <center>
                 <dtitle><span aria-hidden="true" class="li_star fs1"></span> Blizzard</dtitle>
                 <hr>
-                <div data-toggle="tooltip" data-placement="top" title="Blizzard Battlenet Battletag">
-                  <h7>
-                  <span aria-hidden="true" class="li_user fs1"></span> <%= json.social_handles.battlenet_tag %>
-                  </h7>
-                </div><!-- tool tip -->
-              </center>
-             </div><!-- tab panel-->
-             <!-- Bethesda section -->
-             <div role="tabpanel" class="tab-pane" id="bethesda">
-               <center>
-                 <dtitle><span aria-hidden="true" class="li_star fs1"></span>  Bethesda</dtitle>
-                 <hr>
-                 <div data-toggle="tooltip" data-placement="top" title="Bethesda ID">
-                   <h7>
-                     <span aria-hidden="true" class="li_user fs1"></span><%= json.social_handles.bethesda_id %>
-                   </h7>
-                 </div> <!-- tooltip -->
-               </center>
-             </div><!-- tab panel-->
-          </div><!-- tab-content -->
-        </div><!-- /.dash-unit -->
-        </div><!-- /.col -->
+                  <p>
+                    <div data-toggle="tooltip" data-placement="top" title="Blizzard Battlenet Battletag">
+                      <h7><span aria-hidden="true" class="li_user fs1"></span> <%= json.social_handles.battlenet_tag %></h7>
+                    </div><!-- tool tip -->
+                  </p>
+                </center>
+                </div><!-- tab content-->
+                </div><!-- tab -->
+          </div><!-- /.half-unit -->
+          </div><!-- /.col -->
 
         <div class="col-lg-4 col-md-4 col-sm-6">
         <div class="bhoechie-tab-container half-unit">
@@ -125,12 +131,14 @@
                 <!-- Discord section -->
                 <div class="bhoechie-tab-content active">
                     <center>
-                    <dtitle><span aria-hidden="true" class="li_sound fs1"></span> Discord</dtitle>
+                      <dtitle><span aria-hidden="true" class="li_sound fs1"></span> Discord</dtitle>
                       <hr>
-                  <p>
-                      <h7><span aria-hidden="true" class="li_user fs1"></span> <%= json.social_handles.discord_username %></h7>
+                      <p>
+                      <h7>
+                        <span aria-hidden="true" class="li_user fs1"></span> <%= json.social_handles.discord_username %>
+                      </h7>
+                      </p>
                     </center>
-                  </p>
                 </div>
                 <!-- Skype -->
                 <div class="bhoechie-tab-content">
@@ -204,15 +212,12 @@
                 var HalfUnit = $(this).parent().parent().parent()
                 var tabChildren = HalfUnit.children("div.bhoechie-tab").children("div.bhoechie-tab-content");
                 var tabChildrenActive = HalfUnit.children("div.bhoechie-tab").children("div.bhoechie-tab-content.active");
-                var index = $(this).index()
-                $(tabChildren).eq(index).addClass("active");
+                var index = $(this).index();
+                $(tabChildren).addClass("active");
                 $(tabChildrenActive).removeClass("active");
               });
           });
-          $('#mainTabs a').click(function (e) {
-            e.preventDefault()
-            $(this).tab('show')
-           });
+
     </script>
   </body>
 </html>
