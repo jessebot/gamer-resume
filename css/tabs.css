@@ -155,3 +155,9 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
   border-right: 25px solid transparent;
   border-left: 25px solid transparent;
 }
+
+@media (min-width: 992px) {
+    .container {
+      padding-top: 50px;
+    }
+}
